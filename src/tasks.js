@@ -27,18 +27,23 @@ function removeTaskFromProject(project, task) {
   project.tasks = project.tasks.filter((t) => t !== task);
 }
 
+const taskUl = document.querySelector('.tasks');
+const projectUl = document.querySelector('.projects');
+
 function displayTasks(project) {
   project.tasks.forEach((task) => {
-    const taskDiv = document.createElement('div');
-    taskDiv.classList.add('task');
-    taskDiv.innerHTML = `
-      <label>
+    const taskLi = document.createElement('li');
+    taskLi.classList.add('task');
+    taskLi.innerHTML = `
+      <div class="task-title">
         <input type="checkbox">
-        <span></span>
-        ${task.title}
-      </label>
-      <p>${task.priority}</p>
-      <p>Due: ${task.dueDate}</p>
+        <span>${task.title}</span>
+      </div>
+      <div class="task-info">
+          <p>${task.dueDate}</p>
+          <button>edit</button>
+          <button>delete</button>
+      </div>
       
     `;
   });
@@ -47,10 +52,10 @@ function displayTasks(project) {
 
 function displayProjects(projects) {
   projects.forEach((project) => {
-    const projectDiv = document.createElement('div');
-    projectDiv.classList.add('project');
-    projectDiv.innerHTML = `
-      <h2>${project.name}</h2>
+    const projectLi = document.createElement('li');
+    projectLi.classList.add('project');
+    projectLi.innerHTML = `
+      <button class="project-btn">${project.name}</button>
     `;
   });
 }

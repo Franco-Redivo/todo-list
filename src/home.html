@@ -13,52 +13,32 @@
         <button id="all">All Tasks</button>
         <nav>
             <header class="project-header"><h2>Projects</h2><button id="add-project">+</button></header>
-            <ul>
-                <li><button class="project-btn">Project 1</button></li>
-                <li><button class="project-btn">Project 2</button></li>
+            <ul class="projects">
+                <li class="project"><button class="project-btn">Project 1</button></li>
+                <li class="project"><button class="project-btn">Project 2</button></li>
             </ul>
         </nav>
     </sidebar>
     <main>
-        <section id="tasks">
-            <header>
-                <h2>All Tasks</h2>
-                <button id="add-task">add</button>
-            </header>
-            <ul>
-                <li>
+        <header>
+            <h2>All Tasks</h2>
+            <button id="add-task">+</button>
+        </header>
+        <ul class="tasks">
+            <li class="task high-priority">
+                <div class="task-title">
                     <input type="checkbox">
                     <span>Task 1</span>
+                </div>
+                <div class="task-info">
+                    <p>june 22th</p>
                     <button>edit</button>
                     <button>delete</button>
-                </li>
-                <li>
-                    <input type="checkbox">
-                    <span>Task 2</span>
-                    <button>edit</button>
-                    <button>delete</button>
-                </li>
-            </ul>
-        </section>
-        <section id="project">
-            <header>
-                <h2>Project 1</h2>
-                <button id="add-task">add</button>
-            </header>
-            <ul>
-                <li>
-                    <input type="checkbox">
-                    <span>Task 1</span>
-                    <button>edit</button>
-                    <button>delete</button>
-                </li>
-                <li>
-                    <input type="checkbox">
-                    <span>Task 2</span>
-                    <button>edit</button>
-                    <button>delete</button>
-                </li>
-            </ul>
-        </section>
+                </div>
+            </li>
+        </ul>
+        
+    </main>
+        
 </body>
 </html>
