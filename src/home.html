@@ -14,14 +14,13 @@
         <nav>
             <header class="project-header"><h2>Projects</h2><button id="add-project">+</button></header>
             <ul class="projects">
-                <li class="project"><button class="project-btn">Project 1</button></li>
-                <li class="project"><button class="project-btn">Project 2</button></li>
+                
             </ul>
         </nav>
     </sidebar>
     <main>
         <header>
-            <h2>All Tasks</h2>
+            <h2 id="project-title"></h2>
             <button id="add-task">+</button>
         </header>
         <ul class="tasks">
@@ -39,6 +38,26 @@
         </ul>
         
     </main>
+    <dialog id="dialog">
+        <form id="task-form">
+            <div class="inputs">
+                <label for="task-title">Task Title</label>
+                <input type="text" id="task-title" required>
+                <label for="task-date">Task Date</label>
+                <input type="date" id="task-date" required>
+                <label for="task-priority">Task Priority</label>
+                <select id="task-priority" required>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <div class="form-btn">
+                <button id="confirm-button" value="default">Add Task</button>
+                <button type="button" id="cancel-button">Cancel</button>
+            </div>
+        </form>
+    </dialog>
         
 </body>
 </html>
