@@ -188,6 +188,27 @@ main{
     }
 }
 
-.high-priority{
-    background-color: var(--red);
+
+dialog{
+    transform: translate(-50%);
+    left: 50%;
+    top: 25%;
+    position: fixed;
+    width: 20vw;
+    height: 50vh;
+    & form{
+        display: flex;
+        flex-direction: column;
+        gap: 1.3rem;
+        padding: 25px;
+        & .inputs{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            
+            & textarea{
+                height: 100px;
+            }
+        }
+    }
 }

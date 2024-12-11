@@ -24,16 +24,7 @@
             <button id="add-task">+</button>
         </header>
         <ul class="tasks">
-            <li class="task high-priority">
-                <div class="task-title">
-                    <input type="checkbox">
-                    <span>Task 1</span>
-                </div>
-                <div class="task-info">
-                    <p>june 22th</p>
-                    <button>edit</button>
-                    <button>delete</button>
-                </div>
+            
             </li>
         </ul>
         
@@ -45,6 +36,8 @@
                 <input type="text" id="task-title" required>
                 <label for="task-date">Task Date</label>
                 <input type="date" id="task-date" required>
+                <label for="task-description">Task Description</label>
+                <textarea id="task-description" required></textarea>
                 <label for="task-priority">Task Priority</label>
                 <select id="task-priority" required>
                     <option value="low">Low</option>
@@ -55,6 +48,29 @@
             <div class="form-btn">
                 <button id="confirm-button" value="default">Add Task</button>
                 <button type="button" id="cancel-button">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="update-dialog">
+        <form id="update-task-form">
+            <div class="inputs">
+                <label for="update-task-title">Task Title</label>
+                <input type="text" id="update-task-title" required>
+                <label for="update-task-date">Task Date</label>
+                <input type="date" id="update-task-date" required>
+                <label for="update-task-description">Task Description</label>
+                <textarea id="update-task-description" required></textarea>
+                <label for="update-task-priority">Task Priority</label>
+                <select id="update-task-priority" required>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <div class="form-btn">
+                <button id="update-confirm-button" value="default">Update Task</button>
+                <button type="button" id="update-cancel-button">Cancel</button>
             </div>
         </form>
     </dialog>

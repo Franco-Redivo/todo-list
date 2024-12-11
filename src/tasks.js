@@ -8,10 +8,10 @@ function Task(title, description, dueDate, priority) {
 
 const projects = [];
 
-const task1 = new Task('Task 1', 'Description 1', 'dec 31th', 'High');
-const task2 = new Task('Task 2', 'Description 2', 'dec 31th', 'Medium');
-const task3 = new Task('Task 3', 'Description 3', 'nov 14th', 'Low');
-const task4 = new Task('Task 4', 'Description 4', 'nov 14th', 'High');
+// const task1 = new Task('Task 1', 'Description 1', 'dec 31th', 'High');
+// const task2 = new Task('Task 2', 'Description 2', 'dec 31th', 'Medium');
+// const task3 = new Task('Task 3', 'Description 3', 'nov 14th', 'Low');
+// const task4 = new Task('Task 4', 'Description 4', 'nov 14th', 'High');
 
 function Project(name) {
   this.name = name;
@@ -22,19 +22,19 @@ function addProject(project) {
   projects.push(project);
 }
 
-const project1 = new Project('Project 1');
-addProject(project1);
-const project2 = new Project('Project 2');
-addProject(project2);
+// const project1 = new Project('Project 1');
+// addProject(project1);
+// const project2 = new Project('Project 2');
+// addProject(project2);
 
 function addTaskToProject(project, task) {
   project.tasks.push(task);
 }
 
-addTaskToProject(project1, task1);
-addTaskToProject(project1, task2);
-addTaskToProject(project2, task3);
-addTaskToProject(project2, task4);
+// addTaskToProject(project1, task1);
+// addTaskToProject(project1, task2);
+// addTaskToProject(project2, task3);
+// addTaskToProject(project2, task4);
 
 function removeTaskFromProject(project, task) {
   project.tasks = project.tasks.filter((t) => t !== task);
@@ -71,9 +71,21 @@ function displayAllTasks(){
     displayTasks(project);
   });
   projectTitle.innerHTML = 'All Tasks';
+  
+}
+function updateProjectButtons() {
+  const projectBtns = document.querySelectorAll('.project-btn');
+  projectBtns.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+          clearTasks();
+          displayTasks(projects[index]);
+          currentProject = projects[index];
+      });
+  });
 }
 
 function displayProjects() {
+  clearProjects();
   projects.forEach((project) => {
     const projectLi = document.createElement('li');
     projectLi.classList.add('project');
@@ -82,6 +94,7 @@ function displayProjects() {
     `;
     projectUl.appendChild(projectLi);
   });
+  updateProjectButtons();
 }
 function clearTasks(){
   taskUl.innerHTML = '';
@@ -90,5 +103,5 @@ function clearProjects(){
   projectUl.innerHTML = '';
 }
 
-export { project1,project2,projects, addTaskToProject, removeTaskFromProject, displayTasks, displayProjects, displayAllTasks, clearTasks, clearProjects  };
+export { projects, addTaskToProject, removeTaskFromProject, displayTasks, displayProjects, displayAllTasks, clearTasks, clearProjects, Task, Project, updateProjectButtons, addProject };
 
